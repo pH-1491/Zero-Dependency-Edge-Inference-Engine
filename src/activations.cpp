@@ -1,12 +1,34 @@
 #include "activations.h"
 #include <cmath>
 
-float relu(float x)
+Matrix Activations::relu(const Matrix& input)
 {
-    return x > 0 ? x : 0;
+    Matrix result(input.getRows(), input.getCols());
+
+    for(int i = 0; i < input.getRows(); i++)
+    {
+        for(int j = 0; j < input.getCols(); j++)
+        {
+            result.at(i,j) =
+                std::max(0.0, input.at(i,j));
+        }
+    }
+
+    return result;
 }
 
-float sigmoid(float x)
+Matrix Activations::sigmoid(const Matrix& input)
 {
-    return 1.0f / (1.0f + exp(-x));
+    Matrix result(input.getRows(), input.getCols());
+
+    for(int i = 0; i < input.getRows(); i++)
+    {
+        for(int j = 0; j < input.getCols(); j++)
+        {
+            result.at(i,j) =
+                1.0 / (1.0 + std::exp(-input.at(i,j)));
+        }
+    }
+
+    return result;
 }

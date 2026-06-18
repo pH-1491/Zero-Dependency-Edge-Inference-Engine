@@ -1,21 +1,23 @@
-#include <iostream>
-
-#include "activations.h"
 #include "matrix.h"
 
-using namespace std;
+int main() {
 
-int main()
-{
-    float A[2] = {1, 2};
-    float B[2] = {3, 4};
-    float C[1];
+    Matrix A(2,2);
+    Matrix B(2,2);
 
-    matmul(A, B, C, 1, 1, 2);
+    A.at(0,0) = 1;
+    A.at(0,1) = 2;
+    A.at(1,0) = 3;
+    A.at(1,1) = 4;
 
-    cout << "Result = " << C[0] << endl;
+    B.at(0,0) = 5;
+    B.at(0,1) = 6;
+    B.at(1,0) = 7;
+    B.at(1,1) = 8;
 
-    cout << relu(-5) << endl;
-    cout << relu(10) << endl;
+    Matrix C = A * B;
+
+    C.print();
+
     return 0;
 }
