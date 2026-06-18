@@ -1,22 +1,24 @@
+#include <iostream>
+#include "matrix.h"
 void matmul(
-const float* A,
-const float* B,
-float* C,
-int rows,
-int cols,
-int inner)
+        const float* A,
+        const float* B,
+        float* C,
+        int rows,
+        int cols,
+        int inner)
 {
-    for(int i=0;i<rows;i++)
+    for(int i = 0; i < rows; i++)
     {
-        for(int j=0;j<cols;j++)
+        for(int j = 0; j < cols; j++)
         {
-            C[i*cols+j] = 0;
+            C[i * cols + j] = 0;
 
-            for(int k=0;k<inner;k++)
+            for(int k = 0; k < inner; k++)
             {
-                C[i*cols+j] +=
-                    A[i*inner+k] *
-                    B[k*cols+j];
+                C[i * cols + j] +=
+                        A[i * inner + k] *
+                        B[k * cols + j];
             }
         }
     }
