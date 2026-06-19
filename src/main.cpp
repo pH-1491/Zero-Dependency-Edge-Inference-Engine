@@ -1,23 +1,19 @@
 #include "matrix.h"
+#include "dense_layer.h"
 
-int main() {
+int main()
+{
+    Matrix input(1, 3);
 
-    Matrix A(2,2);
-    Matrix B(2,2);
+    input.at(0,0) = 1;
+    input.at(0,1) = 2;
+    input.at(0,2) = 3;
 
-    A.at(0,0) = 1;
-    A.at(0,1) = 2;
-    A.at(1,0) = 3;
-    A.at(1,1) = 4;
+    DenseLayer layer(3, 2);
 
-    B.at(0,0) = 5;
-    B.at(0,1) = 6;
-    B.at(1,0) = 7;
-    B.at(1,1) = 8;
+    Matrix output = layer.forward(input);
 
-    Matrix C = A * B;
-
-    C.print();
+    output.print();
 
     return 0;
 }

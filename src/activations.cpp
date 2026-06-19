@@ -9,13 +9,18 @@ Matrix Activations::relu(const Matrix& input)
     {
         for(int j = 0; j < input.getCols(); j++)
         {
-            result.at(i,j) =
-                std::max(0.0, input.at(i,j));
+            double value = input.at(i, j);
+
+            if(value > 0)
+                result.at(i, j) = value;
+            else
+                result.at(i, j) = 0;
         }
     }
 
     return result;
 }
+
 
 Matrix Activations::sigmoid(const Matrix& input)
 {
@@ -25,8 +30,10 @@ Matrix Activations::sigmoid(const Matrix& input)
     {
         for(int j = 0; j < input.getCols(); j++)
         {
-            result.at(i,j) =
-                1.0 / (1.0 + std::exp(-input.at(i,j)));
+            double value = input.at(i, j);
+
+            result.at(i, j) =
+                1.0 / (1.0 + std::exp(-value));
         }
     }
 

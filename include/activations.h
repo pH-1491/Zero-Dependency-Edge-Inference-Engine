@@ -1,5 +1,5 @@
-#ifndef ACTIVATION_H
-#define ACTIVATION_H
+#ifndef ACTIVATIONS_H
+#define ACTIVATIONS_H
 
 #include "matrix.h"
 

@@ -11,7 +11,7 @@ add_executable(
         src/main.cpp
         src/matrix.cpp
         src/activations.cpp
-        src/mlp.cpp
+        src/dense_layer.cpp
         src/memory_pool.cpp
         src/tcp_server.cpp
 )
