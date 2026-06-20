@@ -1,17 +1,16 @@
-#include "matrix.h"
-#include "dense_layer.h"
+#include "neural_network.h"
 
 int main()
 {
-    Matrix input(1, 3);
+    Matrix input(1,3);
 
     input.at(0,0) = 1;
     input.at(0,1) = 2;
     input.at(0,2) = 3;
 
-    DenseLayer layer(3, 2);
+    NeuralNetwork net;
 
-    Matrix output = layer.forward(input);
+    Matrix output = net.predict(input);
 
     output.print();
 

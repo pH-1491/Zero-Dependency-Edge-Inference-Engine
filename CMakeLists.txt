@@ -14,4 +14,5 @@ add_executable(
         src/dense_layer.cpp
         src/memory_pool.cpp
         src/tcp_server.cpp
+        src/neural_network.cpp
 )
